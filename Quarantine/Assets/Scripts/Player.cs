@@ -14,15 +14,20 @@ public class Player : MonoBehaviour
     public const double speed = 200;
 
     public Rect location;
+    public GUIStyle text_style;
 
     public string player_name;
 
     public string message = "Player 1";
 
+    private static int player_count = 0;
+
     // Use this for initialization
     void Start()
     {
+        player_count++;
         player_name = gameObject.name;
+        message = player_name;
     }
 
     // Update is called once per frame
@@ -37,8 +42,8 @@ public class Player : MonoBehaviour
         message = new_text;
     }
 
-    void OnGUI()
+    public void OnGUI()
     {
-        GUI.Label(location, message);
+        GUI.Label(location, message, text_style);
     }
 }

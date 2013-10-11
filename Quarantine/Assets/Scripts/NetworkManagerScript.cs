@@ -24,6 +24,8 @@ public class NetworkManagerScript : MonoBehaviour {
 
     bool should_destroy = false; // used to tell the object when it should kill itself
 
+    public GameObject combatManagerPrefab;
+
 	// Use this for initialization
 	void Start () {
         context_menu_rect = main_menu.contextMenuRect;
@@ -83,6 +85,21 @@ public class NetworkManagerScript : MonoBehaviour {
                 Debug.Log("Received " + host_data.Length + " games");
             }
         }
+	}
+	
+	void OnLevelWasLoaded()
+	{
+		if(!Application.loadedLevelName.Equals("CombatScene"))
+			return;
+		
+		GameObject combat_manager_obj = (GameObject)Network.Instantiate(combatManagerPrefab, new Vector3(0,0,0), new Quaternion(0,0,0,1), 0);
+		GameObject combat_timer_obj = GameObject.Find ("Combat Timer");
+		CombatManagerScript combat_manager = (CombatManagerScript)combat_manager_obj.GetComponent(typeof(CombatManagerScript));
+		combat_manager.combat_timer = (CombatTimer)combat_timer_obj.GetComponent(typeof(CombatTimer));
+		combat_manager.player = (Player)FindObjectOfType(typeof(Player));
+
+		if(Network.isClient)
+			combat_manager.networkView.RPC ("StartCombat", RPCMode.AllBuffered);
 	}
 
     void OnServerInitialized()

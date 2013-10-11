@@ -389,6 +389,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  combatManagerPrefab: {fileID: 100000, guid: 5db572313799c3b49aa1326094b5d236, type: 2}
 --- !u!1 &1268162514
 GameObject:
   m_ObjectHideFlags: 0
