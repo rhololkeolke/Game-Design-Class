@@ -54,6 +54,8 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 	private bool player_won_ = false;
 	private bool player_lost_ = false;
 	
+	float finished_time = 0;
+	
 	Dictionary<int, FTouch> touch_starts = new Dictionary<int, FTouch>();
 	float touch_start_time;
 	
@@ -185,6 +187,7 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 			
 		if(player_.isDead)
 		{
+			finished_time = Time.time;
 			player_lost_ = true;
 			player_.play("death");
 			
@@ -202,7 +205,7 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 		enemy_.curr_behavior_ = EnemyCharacter.BehaviorType.HIT;
 		if(enemy_.isDead)
 		{
-			// TODO: Show win screen
+			finished_time = Time.time;			
 			player_won_ = true;
 			enemy_.play("death");
 			
@@ -218,12 +221,9 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 		if(enemy_.x - player_.x < 50.0f + enemy_.width/2.0f + player_.width/2.0f)
 		{
 			Debug.Log("Too close to player");
+			enemy_.curr_behavior_ = EnemyCharacter.BehaviorType.IDLE;
+			enemy_.play("idle");
 			
-			if(!enemy_.currentAnim.name.Equals("idle") && enemy_.FinishedCount >= 1)
-			{
-				enemy_.curr_behavior_ = EnemyCharacter.BehaviorType.IDLE;
-				enemy_.play("idle");
-			}
 			return;
 		}
 				
@@ -575,7 +575,8 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 				PlayerPrefs.SetString("highest_level", "brain");
 			
 			player_.play("idle");
-			if(enemy_.FinishedCount >= 1)
+			
+			if(enemy_.FinishedCount >= 1 && Time.time - finished_time > 3.0f)
 			{
 				if(displayEndScreen){
 					victory = new FSprite("victory screen final");
@@ -615,7 +616,7 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 		if(player_lost_)
 		{
 			enemy_.play("idle");
-			if(player_.FinishedCount >= 1)
+			if(player_.FinishedCount >= 1 && Time.time - finished_time > 5.0f)
 			{
 				if(displayEndScreen){
 					defeat = new FSprite("try again screen final");
@@ -629,15 +630,9 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 					yesButton.SignalRelease += HandleYesButton;
 					noButton.SignalRelease += HandleNoButton;
 
-					yesButton.SetPosition(new Vector2(-120, -100));
-					noButton.SetPosition(new Vector2(150,-100));
+					yesButton.SetPosition(new Vector2(Futile.screen.halfWidth*0.0f, Futile.screen.halfHeight*-.65f));
+					noButton.SetPosition(new Vector2(Futile.screen.halfWidth*0.43f, Futile.screen.halfHeight*-.65f));
 					displayEndScreen = false;
-					
-					AddChild(player_);
-					player_.x = -Futile.screen.halfWidth*.6f;
-					player_.y = -Futile.screen.halfHeight*.12f;
-					player_.scale = 1.4f;
-					player_.play("idle");
 				}
 			}
 			
