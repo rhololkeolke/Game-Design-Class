@@ -1,0 +1,28 @@
+{"frames": {
+
+"Lungs_Background_10.png":
+{
+	"frame": {"x":2,"y":804,"w":1680,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1680,"h":800},
+	"sourceSize": {"w":1680,"h":800}
+},
+"Lungs_Background_9.png":
+{
+	"frame": {"x":2,"y":2,"w":1680,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1680,"h":800},
+	"sourceSize": {"w":1680,"h":800}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "LungBackground5.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:2005b6f2551d1cade8722ae12062d9a1:37f7ea635f3f38f9fff744c61876e9cb:b8faabfae83e81581518bf5ea28fa913$"
+}
+}

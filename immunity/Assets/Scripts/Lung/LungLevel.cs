@@ -35,7 +35,7 @@ public class LungLevel : Level {
 		
 		dust_container_size_ = new Rect(-Futile.screen.halfWidth*2.5f, -Futile.screen.halfHeight*2.5f, Futile.screen.width*2.5f, Futile.screen.height*2.5f);
 		
-		dust1_ = new Dust("Dust_4", dust_container_size_);
+		dust1_ = new Dust("DustFarRear", dust_container_size_);
 		AddChild(dust1_);
 		
 		tubes1_ = new FSprite("Lungs_Rear");
@@ -43,7 +43,7 @@ public class LungLevel : Level {
 		tubes2_ = new FSprite("Lungs_MidBack1");
 		AddChild(tubes2_);
 		
-		dust2_ = new Dust("Dust_3", dust_container_size_);
+		dust2_ = new Dust("DustMid", dust_container_size_);
 		AddChild(dust2_);
 		
 		tubes3_ = new FSprite("Lungs_MiddleFore");
@@ -51,7 +51,7 @@ public class LungLevel : Level {
 		tubes4_ = new FSprite("Lungs_Fore");
 		AddChild(tubes4_);
 		
-		dust3_ = new Dust("Dust_2", dust_container_size_);
+		dust3_ = new Dust("DustFore", dust_container_size_);
 		AddChild(dust3_);
 		
 	}

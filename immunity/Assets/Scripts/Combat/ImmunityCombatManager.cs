@@ -41,9 +41,17 @@ public class ImmunityCombatManager : MonoBehaviour {
 		}
 		else if(stage_name.Equals("lung"))
 		{
-			Futile.atlasManager.LoadAtlas("Atlases/lung_background");
+			Futile.atlasManager.LoadAtlas("Atlases/LungBackground1");
+			Futile.atlasManager.LoadAtlas("Atlases/LungBackground2");
+			Futile.atlasManager.LoadAtlas("Atlases/LungBackground3");
+			Futile.atlasManager.LoadAtlas("Atlases/LungBackground4");
+			Futile.atlasManager.LoadAtlas("Atlases/LungBackground5");
+
 			Futile.atlasManager.LoadAtlas("Atlases/lung_layers");
-			Futile.atlasManager.LoadAtlas("Atlases/lung_dust");
+			Futile.atlasManager.LoadAtlas("Atlases/DustRear");
+			Futile.atlasManager.LoadAtlas("Atlases/DustMid");
+			Futile.atlasManager.LoadAtlas("Atlases/DustFore");
+
 		}
 		else
 		{
@@ -55,7 +63,8 @@ public class ImmunityCombatManager : MonoBehaviour {
 			Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_60_animation");
 			Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_40_animation");
 		}
-
+		
+		Futile.atlasManager.LoadAtlas("Atlases/MenuWords");
 		Futile.atlasManager.LoadAtlas ("Atlases/VictoryDefeatAtlas");
 
 		FSoundManager.PreloadSound("player_hit");

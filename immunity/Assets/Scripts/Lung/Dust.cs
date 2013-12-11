@@ -13,7 +13,7 @@ public class Dust : FSprite {
 	public Dust (string sprite_name, Rect container) : base(sprite_name) {
 		ListenForUpdate(HandleUpdate);
 		
-		this.scale = 5.0f;
+		//this.scale = 5.0f;
 		this.alpha = .25f;
 		
 		container_ = container;

@@ -1,0 +1,20 @@
+{"frames": {
+
+"DustFore.png":
+{
+	"frame": {"x":2,"y":2,"w":1918,"h":1080},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":1918,"h":1080},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "DustFore.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:dbfd81e47f11e6051bc10c9c58113aa6:0fbc0e471d492b5e87ad4a2e1e65c569:a364a8304cc3767a8566eefea8a6e458$"
+}
+}

@@ -1,0 +1,20 @@
+{"frames": {
+
+"DustFarRear.png":
+{
+	"frame": {"x":2,"y":2,"w":1920,"h":1080},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":1080},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "DustRear.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:6d7044a385ad564a86cc7d0d06c79705:bd5175c76a6a1372d3e9ed592e1c5928:4eee057fb85c676647d48a3cbaa48dcd$"
+}
+}

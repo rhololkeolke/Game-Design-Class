@@ -1,0 +1,20 @@
+{"frames": {
+
+"DustMid.png":
+{
+	"frame": {"x":2,"y":2,"w":1920,"h":1080},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":1080},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "DustMid.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:894960a0263fdd0a1af91a1a8a8db36c:050eb250521710fcbdab4070921ac660:1c14a5f511c61de22023352b21fcce4d$"
+}
+}

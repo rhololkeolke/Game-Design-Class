@@ -9,7 +9,7 @@ public class Neuron : FAnimatedSprite {
 	{
 		ListenForUpdate(HandleUpdate);
 		
-		scale = RXRandom.Range(0.1f, 0.25f);
+		scale = RXRandom.Range(0.25f, .5f);
 		rotation = RXRandom.Range(-180.0f, 180.0f);
 		
 		int[] frames;
