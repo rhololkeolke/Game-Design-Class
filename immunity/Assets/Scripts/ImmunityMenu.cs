@@ -27,8 +27,9 @@ public class ImmunityMenu : MonoBehaviour {
 	void Start () {
 		instance = this;
 		
-		if(!PlayerPrefs.HasKey("highest_level"))
-			PlayerPrefs.SetString("highest_level", "stomach");
+		/*if(!PlayerPrefs.HasKey("highest_level"))
+			PlayerPrefs.SetString("highest_level", "stomach");*/
+		PlayerPrefs.SetString("highest_level", "brain"); // this is just for the demo
 		
 		FutileParams fparams = new FutileParams(true, true, false, false);
 		
