@@ -48,7 +48,7 @@ public class ImmunityCombatManager : MonoBehaviour {
 		Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_60_animation");
 		Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_40_animation");
 
-		Futile.atlasManager.LoadAtlas ("Atlases/Victory-DefeatAtlas");
+		Futile.atlasManager.LoadAtlas ("Atlases/Menus");
 
 		FSoundManager.PreloadSound("player_hit");
 		FSoundManager.PreloadSound("bacteria_pop");
