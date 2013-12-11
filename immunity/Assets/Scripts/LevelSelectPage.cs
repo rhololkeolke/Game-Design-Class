@@ -14,9 +14,9 @@ public class LevelSelectPage : ImmunityPage, FMultiTouchableInterface
 	private FButton lungs;
 	private FButton stomach;
 
-	private static readonly Vector2 BRAIN_POSITION = new Vector2(152, 134);
+	private static readonly Vector2 BRAIN_POSITION = new Vector2(152, -290);
 	private static readonly Vector2 LUNGS_POSITION = new Vector2(152, -80);
-	private static readonly Vector2 STOMACH_POSITION = new Vector2(152, -290);
+	private static readonly Vector2 STOMACH_POSITION = new Vector2(152, 134);
 
 	public LevelSelectPage()
 	{
