@@ -6,6 +6,7 @@ public enum PageType
 {
 	None,
     TitlePage,
+	HowToPlayPage,
 	LevelSelectPage,
 	CreditsPage
 }
@@ -36,12 +37,7 @@ public class ImmunityMenu : MonoBehaviour {
 		
 		Futile.instance.Init(fparams);
 		
-		Futile.atlasManager.LoadAtlas("Atlases/MainMenu");
-		Futile.atlasManager.LoadAtlas("Atlases/DrawingAtlas");
-		Futile.atlasManager.LoadAtlas("Atlases/LevelSelectMenu");
-		Futile.atlasManager.LoadAtlas("Atlases/CreditsAtlas");
-
-		//Futile.atlasManager.LoadFont("ImmunityFont", "ImmunityFont", "Atlases/ImmunityFont", 0.0f, 0.0f);
+		Futile.atlasManager.LoadAtlas("Atlases/Menus");
 
 		GoToMenu (PageType.TitlePage);
 	}
@@ -58,6 +54,9 @@ public class ImmunityMenu : MonoBehaviour {
 				GoToMenu(PageType.TitlePage);
 				break;
 			case PageType.CreditsPage:
+				GoToMenu(PageType.TitlePage);
+				break;
+			case PageType.HowToPlayPage:
 				GoToMenu(PageType.TitlePage);
 				break;
 			}
@@ -88,6 +87,10 @@ public class ImmunityMenu : MonoBehaviour {
 		case PageType.CreditsPage:
 			currentPageType = PageType.CreditsPage;
 			currentPage = new CreditsPage();
+			break;
+		case PageType.HowToPlayPage:
+			currentPageType = PageType.HowToPlayPage;
+			currentPage = new HowToPlayPage();
 			break;
 		}
 

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreditsPage : ImmunityPage, FMultiTouchableInterface
+public class HowToPlayPage : ImmunityPage, FMultiTouchableInterface
 {
 	private FSprite background_;
 
-	public CreditsPage()
+	public HowToPlayPage()
 	{
 		EnableMultiTouch();
 		ListenForUpdate(HandleUpdate);
@@ -14,7 +14,7 @@ public class CreditsPage : ImmunityPage, FMultiTouchableInterface
 	override public void Start()
 	{		
 		// GUI objects
-		background_ = new FSprite("credits_screen");
+		background_ = new FSprite("help screen");
 		AddChild(background_);
 		background_.scale = 0.0f;
 
