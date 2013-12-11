@@ -183,6 +183,8 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 		FSoundManager.PlaySound("player_hit");
 		ImmunityCombatManager.instance.camera_.shake(100.0f, 0.25f);
 		player_.CurrentState = PlayerCharacter.PlayerState.HIT;
+		player_punch_did_damage = false;
+		enemy_punch_did_damage = false;
 		player_.play("hit", true);
 			
 		if(player_.isDead)
@@ -200,9 +202,9 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 	public void HandleEnemyHit(float damage)
 	{
 		enemy_.ChangeHealth((int)(-damage));
-		// TODO: Play hit sound
 		enemy_.play("hit", true);
 		enemy_.curr_behavior_ = EnemyCharacter.BehaviorType.HIT;
+		FSoundManager.PlaySound("enemy_hit");
 		if(enemy_.isDead)
 		{
 			finished_time = Time.time;			
@@ -481,7 +483,7 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 						{
 							if(enemy_.curr_behavior_ != EnemyCharacter.BehaviorType.BLOCK && enemy_.curr_behavior_ != EnemyCharacter.BehaviorType.HIT)
 							{
-								HandleEnemyHit(EnemyCharacter.MAX_HEALTH*0.1f);
+								HandleEnemyHit(EnemyCharacter.MAX_HEALTH*0.05f);
 							}
 							player_punch_did_damage = true;
 							enemy_.x = player_rect.xMax + enemy_rect.width/2.0f + Futile.screen.halfWidth*.14f;
@@ -496,7 +498,7 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 						{
 							if(player_.CurrentState != PlayerCharacter.PlayerState.BLOCK && player_.CurrentState != PlayerCharacter.PlayerState.HIT)
 							{
-								HandlePlayerHit(PlayerCharacter.MAX_HEALTH*0.1f);							
+								HandlePlayerHit(PlayerCharacter.MAX_HEALTH*0.15f);							
 							}
 							
 							enemy_punch_did_damage = true;
@@ -518,7 +520,7 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 						if(curr_player_movement != null)
 							curr_player_movement.destroy();
 					}
-					
+										
 				}
 			}
 			
@@ -576,7 +578,7 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 			
 			player_.play("idle");
 			
-			if(enemy_.FinishedCount >= 1 && Time.time - finished_time > 3.0f)
+			if(enemy_.FinishedCount >= 1 && Time.time - finished_time > 5.0f)
 			{
 				if(displayEndScreen){
 					victory = new FSprite("victory screen final");
@@ -669,6 +671,8 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 			if(player_.FinishedCount >= 1)
 			{
 				player_.CurrentState = PlayerCharacter.PlayerState.IDLE;
+				player_punch_did_damage = false;
+				enemy_punch_did_damage = false;
 				player_.play("idle");	
 			}
 			break;
@@ -676,6 +680,8 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 			if(player_.FinishedCount >= 1)
 			{
 				player_.CurrentState = PlayerCharacter.PlayerState.IDLE;
+				player_punch_did_damage = false;
+				enemy_punch_did_damage = false;
 				player_.play("idle");
 			}
 			break;
@@ -683,6 +689,8 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 			if(player_.FinishedCount >= 1)
 			{
 				player_.CurrentState = PlayerCharacter.PlayerState.IDLE;
+				player_punch_did_damage = false;
+				enemy_punch_did_damage = false;
 				player_.play("idle");
 			}
 			break;
@@ -777,11 +785,14 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 							
 							player_.CurrentState = PlayerCharacter.PlayerState.WALK;
 							
+							player_punch_did_damage = false;
+							enemy_punch_did_damage = false;
+							
 							// calculate movement time based on player's speed attribute
 							float tween_time = Math.Abs(player_.x - final_position)/(Futile.screen.width*player_.Speed);
 							
 							curr_player_movement = Go.to(player_, tween_time, new TweenConfig().floatProp("x", final_position).onComplete(originalTween => { player_.play("idle"); 
-								player_.CurrentState = PlayerCharacter.PlayerState.IDLE; }));
+								player_.CurrentState = PlayerCharacter.PlayerState.IDLE; player_punch_did_damage = false; enemy_punch_did_damage = false; }));
 						}
 					}
 					else
@@ -829,6 +840,8 @@ public class CombatPage : ImmunityPage, FMultiTouchableInterface {
 						Debug.Log("player block");
 						player_.play("block");
 						player_.CurrentState = PlayerCharacter.PlayerState.BLOCK;
+						player_punch_did_damage = false;
+						enemy_punch_did_damage = false;
 					}
 					else if(touch.position.x > enemy_.x && touch_start.position.x < enemy_.x &&
 						touch.position.y < (enemy_.y + enemy_.height/2.0f) && touch.position.y > (enemy_.y - enemy_.height/2.0f) &&

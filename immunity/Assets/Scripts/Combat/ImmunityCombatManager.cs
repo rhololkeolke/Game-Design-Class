@@ -52,6 +52,7 @@ public class ImmunityCombatManager : MonoBehaviour {
 
 		FSoundManager.PreloadSound("player_hit");
 		FSoundManager.PreloadSound("bacteria_pop");
+		FSoundManager.PreloadSound("enemy_hit");
 		
 		Futile.atlasManager.LogAllElementNames();
 		
