@@ -224,14 +224,6 @@
 	"spriteSourceSize": {"x":77,"y":143,"w":88,"h":24},
 	"sourceSize": {"w":250,"h":250}
 },
-"stomach_back.png":
-{
-	"frame": {"x":2,"y":1606,"w":1480,"h":800},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":1480,"h":800},
-	"sourceSize": {"w":1480,"h":800}
-},
 "stomach_fore.png":
 {
 	"frame": {"x":2,"y":804,"w":1480,"h":800},
@@ -251,10 +243,10 @@
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker ",
 	"version": "1.0",
-	"image": "stomach_atlas.png",
+	"image": "StomachAtlas1.png",
 	"format": "RGBA8888",
-	"size": {"w":2048,"h":4096},
+	"size": {"w":2048,"h":2048},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:f2a54b801491e41dbe97ca823d4cced8:bde8bc71ed048cb8886e0349b5d0c20c:3092c98254f1d20763da9971ea5d7fb0$"
+	"smartupdate": "$TexturePacker:SmartUpdate:c72cc22389920d47efa2babd581eaf4e:218ab1c172af354e5b454e474d9dbe8c:69c0df34e6c20a25db9bfdec1eadfc2e$"
 }
 }

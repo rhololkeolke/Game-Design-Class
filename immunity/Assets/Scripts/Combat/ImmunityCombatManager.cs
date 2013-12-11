@@ -34,21 +34,29 @@ public class ImmunityCombatManager : MonoBehaviour {
 		Futile.atlasManager.LoadAtlas("Atlases/HuroCombatAtlas");
 		Futile.atlasManager.LoadAtlas("Atlases/EnemyCombatAtlas");
 		
-		Futile.atlasManager.LoadAtlas("Atlases/stomach_atlas");
+		if(stage_name.Equals("stomach"))
+		{
+			Futile.atlasManager.LoadAtlas("Atlases/StomachAtlas1");
+			Futile.atlasManager.LoadAtlas("Atlases/StomachAtlas2");
+		}
+		else if(stage_name.Equals("lung"))
+		{
+			Futile.atlasManager.LoadAtlas("Atlases/lung_background");
+			Futile.atlasManager.LoadAtlas("Atlases/lung_layers");
+			Futile.atlasManager.LoadAtlas("Atlases/lung_dust");
+		}
+		else
+		{
+			Futile.atlasManager.LoadAtlas("Atlases/BrainAtlas");
+			Futile.atlasManager.LoadAtlas("Atlases/neuron_fast_80_animation");
+			Futile.atlasManager.LoadAtlas("Atlases/neuron_fast_60_animation");
+			Futile.atlasManager.LoadAtlas("Atlases/neuron_fast_40_animation");
+			Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_80_animation");
+			Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_60_animation");
+			Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_40_animation");
+		}
 
-		Futile.atlasManager.LoadAtlas("Atlases/lung_background");
-		Futile.atlasManager.LoadAtlas("Atlases/lung_layers");
-		Futile.atlasManager.LoadAtlas("Atlases/lung_dust");
-
-		Futile.atlasManager.LoadAtlas("Atlases/BrainAtlas");
-		Futile.atlasManager.LoadAtlas("Atlases/neuron_fast_80_animation");
-		Futile.atlasManager.LoadAtlas("Atlases/neuron_fast_60_animation");
-		Futile.atlasManager.LoadAtlas("Atlases/neuron_fast_40_animation");
-		Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_80_animation");
-		Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_60_animation");
-		Futile.atlasManager.LoadAtlas("Atlases/neuron_slow_40_animation");
-
-		Futile.atlasManager.LoadAtlas ("Atlases/Menus");
+		Futile.atlasManager.LoadAtlas ("Atlases/VictoryDefeatAtlas");
 
 		FSoundManager.PreloadSound("player_hit");
 		FSoundManager.PreloadSound("bacteria_pop");

@@ -1,0 +1,20 @@
+{"frames": {
+
+"stomach_back.png":
+{
+	"frame": {"x":2,"y":2,"w":1480,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1480,"h":800},
+	"sourceSize": {"w":1480,"h":800}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "StomachAtlas2.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:619380ca284feb21fc3d355d1fbe2ed8:e087feaf333aa825954bd5500d3b2250:400c01d0bdbc3472c97737ed7e830e6f$"
+}
+}
