@@ -37,7 +37,11 @@ public class ImmunityMenu : MonoBehaviour {
 		
 		Futile.instance.Init(fparams);
 		
-		Futile.atlasManager.LoadAtlas("Atlases/Menus");
+		Futile.atlasManager.LoadAtlas("Atlases/MenuWords");
+		Futile.atlasManager.LoadAtlas("Atlases/MainMenu");
+		Futile.atlasManager.LoadAtlas("Atlases/LevelSelectAtlas");
+		Futile.atlasManager.LoadAtlas("Atlases/HelpScreenAtlas");
+		Futile.atlasManager.LoadAtlas("Atlases/CreditsAtlas");
 
 		GoToMenu (PageType.TitlePage);
 	}

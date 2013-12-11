@@ -1,6 +1,6 @@
 {"frames": {
 
-"credits_screen.png":
+"level select screen final.png":
 {
 	"frame": {"x":2,"y":2,"w":1280,"h":800},
 	"rotated": false,
@@ -11,10 +11,10 @@
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker ",
 	"version": "1.0",
-	"image": "CreditsAtlas.png",
+	"image": "LevelSelectAtlas.png",
 	"format": "RGBA8888",
 	"size": {"w":2048,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:1093c8df639a39e3ebc2de028175a82a:919d50359d754a6b35aeb8fa5b2abbd6:efe4f2ce7e3fdf95d93f94c04c352fe5$"
+	"smartupdate": "$TexturePacker:SmartUpdate:1a73a3b9d79e51a2ceb6316d195947e4:0162ebd06738fbea4421afc4a2d94594:074e638f270eae93c56e67086007bbf5$"
 }
 }

@@ -1,6 +1,6 @@
 {"frames": {
 
-"credits_screen.png":
+"start screen final.png":
 {
 	"frame": {"x":2,"y":2,"w":1280,"h":800},
 	"rotated": false,
@@ -11,10 +11,10 @@
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker ",
 	"version": "1.0",
-	"image": "CreditsAtlas.png",
+	"image": "MainMenu.png",
 	"format": "RGBA8888",
 	"size": {"w":2048,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:1093c8df639a39e3ebc2de028175a82a:919d50359d754a6b35aeb8fa5b2abbd6:efe4f2ce7e3fdf95d93f94c04c352fe5$"
+	"smartupdate": "$TexturePacker:SmartUpdate:cbd45815adb3466495544d6b4e9bf15a:349545723036fcc4fe00749cd88af415:e6bc3e03ee3a7827af5754b5b4b8e86c$"
 }
 }
